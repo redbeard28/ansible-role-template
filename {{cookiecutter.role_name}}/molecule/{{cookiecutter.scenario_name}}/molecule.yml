@@ -8,27 +8,23 @@ driver:
 lint:
   name: yamllint
   options:
-    config-file: molecule/{{cookiecutter.scenario_name}}/tests/yaml-int.yml
+    config-file: molecule/default/tests/yaml-int.yml
 platforms:
-  - name: "{{cookiecutter.role_name}}-${image:-debian}-${tag:-latest}"
-#    registry:
-#      url: myPRIVATE_register
+  - name: "ansible-role-openjdk-${image:-debian}-${tag:-latest}"
     image: "${namespace:-registry.hub.docker.com/library}/${image:-debian}:${tag:-latest}"
-    pre_build_image: yes
-    privileged: True
+    pre_build_image: true
+    privileged: true
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
 provisioner:
   name: ansible
   playbooks:
-    converge: ../resources/{{cookiecutter.scenario_name}}.yml
+    converge: ../resources/default.yml
     prepare: ../resources/prepare.yml
-#### With verifier ansible
-#    verify: ../resources/verify.yml
   lint:
     name: ansible-lint
 scenario:
-  name: {{cookiecutter.scenario_name}}
+  name: default
   create_sequence:
     - destroy
     - dependency
@@ -54,8 +50,3 @@ verifier:
   directory: ../default/tests/
   lint:
     name: flake8
-#### OR ####
-#verifier:
-#  name: ansible
-#  lint:
-#    name: ansible-lint

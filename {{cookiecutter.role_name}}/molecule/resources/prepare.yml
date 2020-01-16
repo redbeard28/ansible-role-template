@@ -1,9 +1,9 @@
 ---
 - name: Prepare
   hosts: all
-  gather_facts: no
-  become: yes
+  gather_facts: false
+  become: true
 
   roles:
     - role: bootstrap
-      bootstrap_wait_for_host: yes
+      bootstrap_wait_for_host: true
