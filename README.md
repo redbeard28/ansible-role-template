@@ -1,9 +1,9 @@
 ansible-role-template
 =====================
 
-A Molecule template for [cookiecutter](https://github.com/audreyr/cookiecutter)
+A [cookiecutter](https://github.com/audreyr/cookiecutter) template for Ansible roles with Molecule testing framwork. 
 
-Molecule provides a native cookiecutter interface, so developers can
+Cookiecutter provides a native template interface, so developers can
 provide their own templates.
 
 
