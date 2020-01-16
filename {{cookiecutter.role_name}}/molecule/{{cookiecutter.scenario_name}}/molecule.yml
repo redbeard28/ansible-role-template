@@ -1,0 +1,61 @@
+---
+dependency:
+  name: galaxy
+  options:
+    role-file: molecule/resources/requirements.yml
+driver:
+  name: docker
+lint:
+  name: yamllint
+  options:
+    config-file: molecule/{{cookiecutter.scenario_name}}/tests/yaml-int.yml
+platforms:
+  - name: "{{cookiecutter.role_name}}-${image:-debian}-${tag:-latest}"
+#    registry:
+#      url: myPRIVATE_register
+    image: "${namespace:-registry.hub.docker.com/library}/${image:-debian}:${tag:-latest}"
+    pre_build_image: yes
+    privileged: True
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+provisioner:
+  name: ansible
+  playbooks:
+    converge: ../resources/{{cookiecutter.scenario_name}}.yml
+    prepare: ../resources/prepare.yml
+#### With verifier ansible
+#    verify: ../resources/verify.yml
+  lint:
+    name: ansible-lint
+scenario:
+  name: {{cookiecutter.scenario_name}}
+  create_sequence:
+    - destroy
+    - dependency
+    - create
+    - prepare
+  converge_sequence:
+    - destroy
+    - dependency
+    - create
+    - prepare
+    - converge
+  destroy_sequence:
+    - destroy
+  test_sequence:
+    - lint
+    - create
+    - prepare
+    - converge
+    - verify
+    - destroy
+verifier:
+  name: testinfra
+  directory: ../default/tests/
+  lint:
+    name: flake8
+#### OR ####
+#verifier:
+#  name: ansible
+#  lint:
+#    name: ansible-lint

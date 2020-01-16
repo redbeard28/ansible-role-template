@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  author: {{cookiecutter.author_name}}
+  role_name: {{cookiecutter.role_name}}
+  description: {{cookiecutter.short_description}}
+  license: {{cookiecutter.license}}
+  company: {{cookiecutter.Compagny_name}}
+  min_ansible_version: {{cookiecutter.ansible_version}}
+
+  platforms:
+    - name: Debian
+      versions:
+        - all
+
+  galaxy_tags: []
+
+  dependencies: []

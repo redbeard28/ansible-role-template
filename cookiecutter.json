@@ -1,0 +1,10 @@
+{
+	"author_name": "Jeremie CUADRADO",
+	"author_email": "info@redbeard-consulting.fr",
+	"role_name": "ansible-rolename",
+	"short_description": "My short description",
+	"license": "GPLv3",
+	"Compagny_name": "Redbeard-Consulting",
+	"ansible_version": "2.9",
+	"scenario_name": "default"
+}

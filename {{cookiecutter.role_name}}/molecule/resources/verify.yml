@@ -1,0 +1,11 @@
+{%- raw %}
+---
+- name: Verify
+  hosts: all
+  become: no
+  gather_facts: no
+
+  tasks:
+    - name: check bash version
+      command: bash --version
+  {%- endraw %}
