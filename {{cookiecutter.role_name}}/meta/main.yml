@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: {{cookiecutter.author_name}}
-  role_name: {{cookiecutter.role_name}}
+  role_name: {{cookiecutter.short_name}}
   description: {{cookiecutter.short_description}}
   license: {{cookiecutter.license}}
   company: {{cookiecutter.Compagny_name}}
