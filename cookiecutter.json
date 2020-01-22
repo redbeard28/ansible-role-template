@@ -1,7 +1,8 @@
 {
 	"author_name": "Jeremie CUADRADO",
 	"author_email": "info@redbeard-consulting.fr",
-	"role_name": "ansible-rolename",
+	"role_name": "ansible-role-toto",
+	"short_name": "toto",
 	"short_description": "My short description",
 	"license": "GPLv3",
 	"Compagny_name": "Redbeard-Consulting",

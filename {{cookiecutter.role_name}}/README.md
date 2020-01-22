@@ -16,9 +16,7 @@ ansible-galaxy install -r requirements.yml
 Inside requirements.yml
 ````yaml
 # from GitHub, overriding the name and specifying a specific tag
-- src: git+https://github.com/redbeard28/{{cookiecutter.role_name}}.git
-  version: master
-  name: {{cookiecutter.role_name}}
+- src: redbeard28.{{cookiecutter.short_name}}
 ````
 
 More info => [Ansible Docs](https://docs.ansible.com/ansible-container/roles/access.html)
@@ -48,7 +46,7 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: all
       roles:
-         - { role: {{cookiecutter.role_name}}, tags: mytags }
+         - { role: redbeard28.{{cookiecutter.short_name}}, tags: mytags }
 
 
 Molecule testing framework
