@@ -1,4 +1,4 @@
-# {{cookiecutter.role_name | upper}}
+{{cookiecutter.role_name | upper}}
 {% for letter in cookiecutter.role_name %}={% endfor %}
 
 {{cookiecutter.short_description}}

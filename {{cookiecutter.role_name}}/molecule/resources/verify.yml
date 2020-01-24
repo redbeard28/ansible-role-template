@@ -7,4 +7,5 @@
   tasks:
     - name: check bash version
       command: bash --version
-  {%- endraw %}
+
+{%- endraw %}
