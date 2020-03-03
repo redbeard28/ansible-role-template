@@ -12,6 +12,9 @@ galaxy_info:
       versions:
         - all
 
-  galaxy_tags: []
+  galaxy_tags:
+    - redbeard28
 
-  dependencies: []
+  dependencies:
+    - src: redbeard28.bootstrap
+    - src: redbeard28.basetools
